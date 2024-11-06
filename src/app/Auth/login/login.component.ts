@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';  // Import FormsModule for template-driven forms
 import { HttpClientModule, HttpClient } from '@angular/common/http';  // Import HttpClientModule and HttpClient
+import { Router } from '@angular/router';  // Import Router service
 
 @Component({
   selector: 'app-login',
@@ -14,7 +15,8 @@ export class LoginComponent {
   password: string = '';
 
   // Inject HttpClient to make API requests
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private router: Router) {}
+
 
   // Function to handle form submission
   onSubmit() {
@@ -30,7 +32,10 @@ export class LoginComponent {
               // this.gettopnavigation(token);
               // this.sidetoken(token);
               console.log((response as any).token);  
-              // localStorage.setItem('token', (response as any).token);
+
+              this.router.navigate(['/home']);
+
+              localStorage.setItem('token', (response as any).token);
             }else if ((response as any).success === false){
               console.log( (response as any).message); 
             }
