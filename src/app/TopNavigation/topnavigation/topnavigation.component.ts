@@ -19,6 +19,7 @@ export class TopnavigationComponent {
         console.error('No token found in localStorage');
       }
     }
+
   // Fetch top navigation data
   gettopnavigation(token: string) {
     if (token) {
