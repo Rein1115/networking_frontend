@@ -1,49 +1,49 @@
 {
-  "hash": "31e483d2",
-  "configHash": "ceae8431",
-  "lockfileHash": "9aab874c",
-  "browserHash": "922d23a2",
+  "hash": "e6e00c04",
+  "configHash": "ebf7294b",
+  "lockfileHash": "25036bc4",
+  "browserHash": "f5b3e9c2",
   "optimized": {
     "@angular/common": {
       "src": "../../../../../../node_modules/@angular/common/fesm2022/common.mjs",
       "file": "@angular_common.js",
-      "fileHash": "86a0de66",
+      "fileHash": "f5771052",
       "needsInterop": false
     },
     "@angular/common/http": {
       "src": "../../../../../../node_modules/@angular/common/fesm2022/http.mjs",
       "file": "@angular_common_http.js",
-      "fileHash": "26aeeddc",
+      "fileHash": "3fb2b142",
       "needsInterop": false
     },
     "@angular/core": {
       "src": "../../../../../../node_modules/@angular/core/fesm2022/core.mjs",
       "file": "@angular_core.js",
-      "fileHash": "3606a7eb",
+      "fileHash": "8646e001",
       "needsInterop": false
     },
     "@angular/forms": {
       "src": "../../../../../../node_modules/@angular/forms/fesm2022/forms.mjs",
       "file": "@angular_forms.js",
-      "fileHash": "7258e0fb",
+      "fileHash": "60b0e160",
       "needsInterop": false
     },
     "@angular/platform-browser": {
       "src": "../../../../../../node_modules/@angular/platform-browser/fesm2022/platform-browser.mjs",
       "file": "@angular_platform-browser.js",
-      "fileHash": "1e41a938",
+      "fileHash": "fe10ec45",
       "needsInterop": false
     },
     "@angular/platform-server": {
       "src": "../../../../../../node_modules/@angular/platform-server/fesm2022/platform-server.mjs",
       "file": "@angular_platform-server.js",
-      "fileHash": "cf99dfcf",
+      "fileHash": "bc6db14d",
       "needsInterop": false
     },
     "@angular/router": {
       "src": "../../../../../../node_modules/@angular/router/fesm2022/router.mjs",
       "file": "@angular_router.js",
-      "fileHash": "76417702",
+      "fileHash": "609d1d2b",
       "needsInterop": false
     }
   },
