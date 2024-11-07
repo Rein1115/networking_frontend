@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
-
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { TopnavigationComponent } from './TopNavigation/topnavigation/topnavigation.component';
 
 @Component({
@@ -14,6 +14,7 @@ import { TopnavigationComponent } from './TopNavigation/topnavigation/topnavigat
     TopnavigationComponent,
     CommonModule,
     HttpClientModule,
+    NgbModule
   ],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'] // Corrected to styleUrls
