@@ -12,7 +12,6 @@ export const routes: Routes = [
     { path: '', component: GuestComponent},
     { path: 'login', component: LoginComponent },//canActivate: [AuthGuard]
 
-
     // HAVE A TOKEN 
     // { path: 'home', component: TopnavigationComponent },
     { path: 'home', component: HomeComponent },
