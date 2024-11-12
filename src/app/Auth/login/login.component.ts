@@ -13,7 +13,7 @@ import { Router } from '@angular/router';  // Import Router service
 export class LoginComponent {
   email: string = '';
   password: string = '';
-
+  url = 'https://red-anteater-382469.hostingersite.com/public/api/';
   // Inject HttpClient to make API requests
   constructor(private http: HttpClient, private router: Router) {}
 
@@ -24,13 +24,10 @@ export class LoginComponent {
       const loginData = { email: this.email, password: this.password };
 
  
-      this.http.post('https://gold-wren-502857.hostingersite.com/public/api/login', loginData)
+      this.http.post(`${this.url}login`, loginData)
         .subscribe(
           (response) => {
             if ((response as any).success === true) {
-              // var token = (response as any).token
-              // this.gettopnavigation(token);
-              // this.sidetoken(token);
               console.log((response as any).token);  
 
               this.router.navigate(['/home']);

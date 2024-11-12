@@ -4,24 +4,25 @@ import { RouterOutlet } from '@angular/router';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { TopnavigationComponent } from './TopNavigation/topnavigation/topnavigation.component';
+// import { TopnavigationComponent } from './TopNavigation/topnavigation/topnavigation.component';
+// import { AppComponent } from './app.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [
     RouterOutlet,
-    TopnavigationComponent,
     CommonModule,
     HttpClientModule,
-    NgbModule
+    NgbModule,
+    AppComponent
   ],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'] // Corrected to styleUrls
 })
 export class AppComponent {
   title = 'first-angular';
-
+  url = 'https://red-anteater-382469.hostingersite.com/public/api/';
   constructor(private http: HttpClient) {}
 
   navigationLinks: any[] = [];
@@ -39,7 +40,7 @@ export class AppComponent {
   gettopnavigation(token: string) {
     if (token) {
       const desc_code = 'top_navigation';
-      this.http.get('https://gold-wren-502857.hostingersite.com/public/api/accessmenu', {
+      this.http.get(`${this.url}accessmenu`, {
         headers: { Authorization: `Bearer ${token}` },
         params: { desc_code }
       })
@@ -61,7 +62,7 @@ export class AppComponent {
     if (token) {
       const desc_code = 'sidebar_token';
 
-      this.http.get('https://gold-wren-502857.hostingersite.com/public/api/accessmenu', {
+      this.http.get(`${this.url}accessmenu`, {
         headers: { Authorization: `Bearer ${token}` },
         params: { desc_code }
       })

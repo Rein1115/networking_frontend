@@ -1,20 +1,16 @@
 import { Routes } from '@angular/router';
 import { LoginComponent } from './Auth/login/login.component';
-import { TopnavigationComponent } from './TopNavigation/topnavigation/topnavigation.component';
-import { AuthGuard } from './Auth/guards/auth.guard';  
+// import { AuthGuard } from './Auth/guards/auth.guard';
+import { AuthGuard } from './auth.guard';
 import { GuestComponent } from './Guest/guest/guest.component';
 import { HomeComponent } from './Home/home/home.component';
-
+import { RolesComponent } from './System/roles/roles.component';
 
 export const routes: Routes = [
+  { path: '', component: GuestComponent },
+  { path: 'login', component: LoginComponent },
 
-    // GUEST
-    { path: '', component: GuestComponent},
-    { path: 'login', component: LoginComponent },//canActivate: [AuthGuard]
-
-    // HAVE A TOKEN 
-    // { path: 'home', component: TopnavigationComponent },
-    { path: 'home', component: HomeComponent },
-    { path: '', redirectTo: '/home', pathMatch: 'full' },
-    
+  // Protect these routes with AuthGuard
+  { path: 'home', component: HomeComponent, canActivate: [AuthGuard] },
+  { path: 'role', component: RolesComponent, canActivate: [AuthGuard] }
 ];

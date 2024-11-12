@@ -1,37 +1,38 @@
 
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light" >
-        <a class="navbar-brand" href="#">LOGO</a>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">LOGO</a>
+
+    <!-- Toggle button for mobile view -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
     
-        <!-- Toggle button for mobile view -->
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        
-        <!-- Navbar content -->
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ms-auto">
-                <li *ngFor="let link of navigationLinks" class="nav-item" [ngClass]="{'dropdown': link.submenus && link.submenus.length > 0}">
-                    <!-- If submenu exists, render as dropdown -->
-                    <a *ngIf="link.submenus && link.submenus.length > 0" class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        <i class="{{ link.icon }}"></i> {{ link.description }}
-                    </a>
-                    <!-- If no submenu, render as normal link -->
-                    <a *ngIf="!link.submenus || link.submenus.length === 0" class="nav-link" [href]="link.route">
-                        <i class="{{ link.icon }}"></i> {{ link.description }}
-                    </a>
-                    <!-- Dropdown menu for submenu links -->
-                    <ul *ngIf="link.submenus && link.submenus.length > 0" class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                        <li *ngFor="let submenu of link.submenus">
-                            <a class="dropdown-item" [href]="submenu.route">
-                                <i class="{{ submenu.icon }}"></i> {{ submenu.description }}
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-            </ul>
-        </div>
-    </nav>
+    <!-- Navbar content -->
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+            <li *ngFor="let link of navigationLinks" class="nav-item" [ngClass]="{'dropdown': link.submenus && link.submenus.length > 0}">
+                <!-- If submenu exists, render as dropdown -->
+                <a *ngIf="link.submenus && link.submenus.length > 0" class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="{{ link.icon }}"></i> {{ link.description }}
+                </a>
+                <!-- If no submenu, render as normal link -->
+                <a *ngIf="!link.submenus || link.submenus.length === 0" class="nav-link" [href]="link.route">
+                    <i class="{{ link.icon }}"></i> {{ link.description }}
+                </a>
+                <!-- Dropdown menu for submenu links -->
+                <ul *ngIf="link.submenus && link.submenus.length > 0" class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                    <li *ngFor="let submenu of link.submenus">
+                        <a class="dropdown-item" [href]="submenu.route">
+                            <i class="{{ submenu.icon }}"></i> {{ submenu.description }}
+                        </a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</nav>
+
     
 
 
